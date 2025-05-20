@@ -1,0 +1,15 @@
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3307/quartz
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password:
+
+  quartz:
+    job-store-type: jdbc
+    auto-startup: true
+    jdbc:
+      initialize-schema: always
+server:
+  port: 8082
