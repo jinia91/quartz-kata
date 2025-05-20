@@ -1,17 +1,17 @@
 package deepdive.quartz.quartz
 
+import deepdive.quartz.quartz.job.LogJob
 import jakarta.annotation.PostConstruct
 import org.quartz.*
 import org.springframework.context.annotation.Configuration
-import org.springframework.stereotype.Component
 
 @Configuration
-class QuartzJobConfig(
+class QuartzConfig(
     private val scheduler: Scheduler,
     private val auditJobListener: AuditJobListener
 ) {
     @PostConstruct
-    fun scheduleLogJob() {
+    fun initSchedule() {
         val jobDetail = JobBuilder.newJob(LogJob::class.java)
             .withIdentity("logJob", "logGroup")
             .storeDurably()
@@ -31,9 +31,3 @@ class QuartzJobConfig(
     }
 }
 
-@Component
-class LogJob : Job {
-    override fun execute(context: JobExecutionContext) {
-        println("쿼츠 동작 ${System.currentTimeMillis()}")
-    }
-}
