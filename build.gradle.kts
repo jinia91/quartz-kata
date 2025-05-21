@@ -21,8 +21,8 @@ repositories {
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-quartz")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("org.jobrunr:jobrunr-spring-boot-3-starter:7.5.1")
     implementation("com.mysql:mysql-connector-j:8.0.33")
-//    implementation("com.zaxxer:HikariCP:6.3.0")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")

@@ -6,10 +6,20 @@ spring:
     username: root
     password:
 
-  quartz:
-    job-store-type: jdbc
-    auto-startup: true
-    jdbc:
-      initialize-schema: always
+#  quartz:
+#    job-store-type: jdbc
+#    auto-startup: true
+#    jdbc:
+#      initialize-schema: always
 server:
   port: 8082
+
+
+org:
+  jobrunr:
+    job-scheduler:
+      enabled: true
+    background-job-server:
+        enabled: true
+    dashboard:
+      enabled: true
